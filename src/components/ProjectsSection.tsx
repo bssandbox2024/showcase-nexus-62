@@ -1,45 +1,41 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, TrendingUp, Users, DollarSign, Target } from 'lucide-react';
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with modern UI, secure payments, and admin dashboard.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: 'Mobile Banking App Redesign',
+      description: 'Led the complete redesign of a mobile banking app, improving user engagement by 40% and reducing support tickets by 35%.',
+      metrics: ['40% increase in engagement', '35% reduction in support tickets', '4.8/5 app store rating'],
+      skills: ['User Research', 'A/B Testing', 'Cross-platform Design'],
+      icon: TrendingUp,
       featured: true
     },
     {
-      title: 'Task Management App',
-      description: 'Collaborative task management tool with real-time updates and team features.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Vue.js', 'Firebase', 'Tailwind'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      title: 'Portfolio Website',
-      description: 'Personal portfolio showcasing projects and skills with smooth animations.',
-      image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'TypeScript', 'Framer Motion'],
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      title: 'Analytics Dashboard',
-      description: 'Real-time analytics dashboard with interactive charts and data visualization.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'D3.js', 'Express', 'MongoDB'],
-      liveUrl: '#',
-      githubUrl: '#',
+      title: 'E-commerce Personalization',
+      description: 'Developed ML-powered product recommendation system that increased conversion rates and average order value.',
+      metrics: ['25% increase in conversion', '18% higher AOV', '2M+ users'],
+      skills: ['Machine Learning', 'Analytics', 'Product Strategy'],
+      icon: Target,
       featured: true
+    },
+    {
+      title: 'SaaS Dashboard Platform',
+      description: 'Built comprehensive analytics dashboard for B2B clients, enabling better data-driven decision making.',
+      metrics: ['200+ enterprise clients', '99.9% uptime', '85% user satisfaction'],
+      skills: ['B2B Product', 'Data Visualization', 'Enterprise Sales'],
+      icon: Users,
+      featured: false
+    },
+    {
+      title: 'Subscription Growth Initiative',
+      description: 'Optimized pricing strategy and onboarding flow, significantly improving subscription conversion and retention.',
+      metrics: ['30% increase in subscriptions', '20% better retention', '$2M+ ARR growth'],
+      skills: ['Pricing Strategy', 'User Onboarding', 'Growth Metrics'],
+      icon: DollarSign,
+      featured: false
     }
   ];
 
@@ -47,14 +43,14 @@ const ProjectsSection = () => {
   const otherProjects = projects.filter(project => !project.featured);
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="py-24 bg-muted/20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Featured Projects
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-light mb-8 text-foreground tracking-tight">
+            Key Projects
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for development
+          <p className="text-lg text-muted-foreground font-light">
+            Product initiatives that delivered measurable business impact
           </p>
         </div>
         
@@ -63,41 +59,51 @@ const ProjectsSection = () => {
           {featuredProjects.map((project, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 bg-card/50 backdrop-blur-sm border-border/50 overflow-hidden"
+              className="border-0 shadow-card hover:shadow-lg transition-all duration-200 bg-background overflow-hidden"
             >
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary-glow/20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <Badge className="mb-2">Featured</Badge>
-                </div>
-              </div>
-              
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="outline">
-                      {tech}
-                    </Badge>
-                  ))}
+              <CardContent className="p-8">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="p-3 bg-muted rounded-lg">
+                    <project.icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-medium mb-3 text-foreground">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground font-light leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
                 
-                <div className="flex gap-3">
-                  <Button size="sm" className="flex-1">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Live Demo
-                  </Button>
-                  <Button size="sm" variant="outline">
-                    <Github className="w-4 h-4 mr-2" />
-                    Code
-                  </Button>
+                <div className="space-y-4 mb-6">
+                  <div>
+                    <h4 className="text-sm font-medium text-foreground mb-2">Key Results</h4>
+                    <div className="space-y-1">
+                      {project.metrics.map((metric, metricIndex) => (
+                        <div key={metricIndex} className="text-sm text-muted-foreground font-light">
+                          • {metric}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-medium text-foreground mb-2">Skills Applied</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.skills.map((skill, skillIndex) => (
+                        <Badge key={skillIndex} variant="secondary" className="text-xs font-light">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
                 </div>
+                
+                <Button variant="outline" size="sm" className="w-full">
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  View Case Study
+                </Button>
               </CardContent>
             </Card>
           ))}
@@ -108,31 +114,25 @@ const ProjectsSection = () => {
           {otherProjects.map((project, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 bg-card/30 backdrop-blur-sm border-border/50"
+              className="border-0 shadow-subtle hover:shadow-card transition-all duration-200 bg-background"
             >
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                  {project.description}
-                </p>
-                
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="secondary" className="text-xs">
-                      {tech}
-                    </Badge>
-                  ))}
+                <div className="flex items-start gap-3 mb-4">
+                  <project.icon className="h-5 w-5 text-primary mt-1" />
+                  <div>
+                    <h3 className="text-lg font-medium mb-2 text-foreground">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm font-light leading-relaxed">
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
                 
-                <div className="flex gap-2">
-                  <Button size="sm" variant="ghost" className="p-2">
-                    <ExternalLink className="w-4 h-4" />
-                  </Button>
-                  <Button size="sm" variant="ghost" className="p-2">
-                    <Github className="w-4 h-4" />
-                  </Button>
+                <div className="space-y-2 text-xs text-muted-foreground font-light">
+                  {project.metrics.slice(0, 2).map((metric, metricIndex) => (
+                    <div key={metricIndex}>• {metric}</div>
+                  ))}
                 </div>
               </CardContent>
             </Card>

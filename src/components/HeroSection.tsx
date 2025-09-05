@@ -10,34 +10,27 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted"></div>
-      
-      {/* Floating orbs */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-      
-      <div className="container mx-auto px-6 text-center relative z-10">
-        <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-primary-glow bg-clip-text text-transparent">
-            John Developer
+    <section id="hero" className="min-h-screen flex items-center justify-center pt-20">
+      <div className="container mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-light mb-6 text-foreground tracking-tight">
+            Sarah Johnson
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Full-Stack Developer & UI/UX Designer
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-light">
+            Product Manager
           </p>
           
-          <p className="text-lg text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            I craft digital experiences that blend beautiful design with powerful functionality. 
-            Passionate about creating innovative solutions that make a difference.
+          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+            I build products that solve real problems and create meaningful impact. 
+            Passionate about user experience, data-driven decisions, and cross-functional collaboration.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button 
               onClick={scrollToProjects}
               size="lg"
-              className="bg-gradient-to-r from-primary to-primary-glow hover:shadow-lg hover:shadow-primary/25 transition-all duration-300"
+              className="bg-primary hover:bg-primary/90 transition-colors duration-200"
             >
               View My Work
               <ArrowDown className="ml-2 h-4 w-4" />
@@ -46,22 +39,21 @@ const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-primary/50 hover:bg-primary/10 transition-all duration-300"
+              className="border-muted-foreground/30 hover:bg-muted transition-colors duration-200"
             >
               <Download className="mr-2 h-4 w-4" />
-              Download CV
+              Download Resume
             </Button>
           </div>
           
-          <div className="flex justify-center space-x-6">
-            <Button variant="ghost" size="icon" className="hover:text-primary transition-colors duration-300">
-              <Github className="h-5 w-5" />
+          <div className="flex justify-center space-x-8">
+            <Button variant="ghost" size="sm" className="hover:text-primary transition-colors duration-200 font-light">
+              <Linkedin className="mr-2 h-4 w-4" />
+              LinkedIn
             </Button>
-            <Button variant="ghost" size="icon" className="hover:text-primary transition-colors duration-300">
-              <Linkedin className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:text-primary transition-colors duration-300">
-              <Mail className="h-5 w-5" />
+            <Button variant="ghost" size="sm" className="hover:text-primary transition-colors duration-200 font-light">
+              <Mail className="mr-2 h-4 w-4" />
+              Email
             </Button>
           </div>
         </div>

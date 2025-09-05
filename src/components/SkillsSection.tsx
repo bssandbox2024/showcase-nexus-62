@@ -4,54 +4,48 @@ import { Badge } from '@/components/ui/badge';
 const SkillsSection = () => {
   const skillCategories = [
     {
-      title: 'Frontend',
-      skills: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Vue.js', 'Angular'],
-      color: 'from-blue-500 to-cyan-500'
+      title: 'Product Strategy',
+      skills: ['Product Roadmapping', 'Market Research', 'Competitive Analysis', 'User Research', 'Product Vision', 'Go-to-Market']
     },
     {
-      title: 'Backend',
-      skills: ['Node.js', 'Python', 'Express', 'FastAPI', 'PostgreSQL', 'MongoDB'],
-      color: 'from-green-500 to-emerald-500'
+      title: 'Analytics & Tools',
+      skills: ['Google Analytics', 'Mixpanel', 'Amplitude', 'Figma', 'Miro', 'Notion', 'JIRA', 'SQL']
     },
     {
-      title: 'Tools & Others',
-      skills: ['Git', 'Docker', 'AWS', 'Figma', 'Jest', 'GraphQL'],
-      color: 'from-purple-500 to-pink-500'
+      title: 'Leadership & Process',
+      skills: ['Agile/Scrum', 'Cross-functional Teams', 'Stakeholder Management', 'A/B Testing', 'Feature Prioritization', 'OKRs']
     }
   ];
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-24">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
-            Skills & Technologies
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <h2 className="text-3xl md:text-4xl font-light mb-8 text-foreground tracking-tight">
+            Skills & Expertise
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Here are the technologies and tools I use to bring ideas to life
+          <p className="text-lg text-muted-foreground font-light">
+            Core competencies that drive successful product outcomes
           </p>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {skillCategories.map((category, index) => (
             <Card 
               key={index}
-              className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 bg-card/50 backdrop-blur-sm border-border/50"
+              className="border-0 shadow-subtle hover:shadow-card transition-all duration-200 bg-background"
             >
-              <CardContent className="p-6">
-                <div className={`inline-block p-3 rounded-lg bg-gradient-to-r ${category.color} mb-4`}>
-                  <h3 className="text-xl font-semibold text-white">{category.title}</h3>
-                </div>
+              <CardContent className="p-8">
+                <h3 className="text-lg font-medium mb-6 text-foreground">{category.title}</h3>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="space-y-3">
                   {category.skills.map((skill, skillIndex) => (
-                    <Badge 
+                    <div 
                       key={skillIndex}
-                      variant="secondary"
-                      className="hover:bg-primary hover:text-primary-foreground transition-colors duration-300 cursor-default"
+                      className="text-muted-foreground font-light text-sm py-1"
                     >
                       {skill}
-                    </Badge>
+                    </div>
                   ))}
                 </div>
               </CardContent>
@@ -59,9 +53,10 @@ const SkillsSection = () => {
           ))}
         </div>
         
-        <div className="text-center mt-16">
-          <p className="text-muted-foreground">
-            Always learning and exploring new technologies to stay at the forefront of development
+        <div className="text-center mt-20">
+          <p className="text-muted-foreground font-light max-w-2xl mx-auto">
+            I combine analytical thinking with creative problem-solving to build products 
+            that create meaningful impact for users and sustainable growth for businesses.
           </p>
         </div>
       </div>
